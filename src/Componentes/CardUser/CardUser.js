@@ -5,6 +5,8 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { CardActionArea } from "@mui/material";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import "./CardUser.css";
 
 const CardUser = ({ char }) => {
@@ -12,22 +14,47 @@ const CardUser = ({ char }) => {
 
   return (
     <Card sx={{ maxWidth: 345 }} className="contornoCard">
-      <CardMedia component="img" alt="product" image={image} />
-      <CardContent>
-        <Typography gutterBottom variant="h6" component="div">
-          {title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Producto: {category} | Popularidad: {rating.rate}
-        </Typography>
-        <Typography variant="body2" color="text.primary">
-          Precio: {price}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Ver Producto</Button>
-        <Button size="small">Agregar al Carrito</Button>
-      </CardActions>
+      <CardActionArea>
+        <CardMedia
+          className="imagenCard"
+          component="img"
+          height="300"
+          alt="product"
+          image={image}
+        />
+        <CardContent
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="flex-start"
+        >
+          <Typography
+            gutterBottom
+            variant="subtitle1"
+            component="div"
+            height={90}
+            textAlign="center"
+          >
+            {title}
+          </Typography>
+          <Typography variant="body2" className="letraProducto">
+            Producto: {category} | Popularidad: {rating.rate}
+          </Typography>
+          <Typography
+            variant="body2"
+            /* color="text.primary" */
+            className="letraPrecio"
+          >
+            Precio: {price}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button variant="contained">Ver Producto</Button>
+          <Button variant="contained">
+            Agregar al Carrito <AddShoppingCartIcon />
+          </Button>
+        </CardActions>
+      </CardActionArea>
     </Card>
   );
 };

@@ -13,6 +13,7 @@ import AboutPage from "./pages/AboutPage/AboutPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import DetailPage from "./pages/DetailPage/DetailPage";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
+import CarritoProductos from "./pages/carritoProductos/carritoProductos";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/detail/:id" element={<DetailPage />} />
           <Route path="/category/:categoryId" element={<CategoryPage />} />
+          <Route path="/carrito" element={<CarritoProductos />} />
         </Routes>
       </div>
     </Router>

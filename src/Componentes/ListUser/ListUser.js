@@ -15,7 +15,7 @@ const ListUser = () => {
   }, []);
 
   return (
-    <div className="Cards-List">
+    <div className="Cards-List" justifyContent="center" alignItems="center">
       {chars.map((char) => {
         return (
           <div key={char.id}>

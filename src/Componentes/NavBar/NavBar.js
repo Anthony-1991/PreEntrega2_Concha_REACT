@@ -1,4 +1,5 @@
-import "./styles.css";
+import "./NavBar.css";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 import { Link } from "react-router-dom";
 
@@ -20,6 +21,11 @@ const NavBar = () => {
         </Link>
         <Link className="li" to="/category/electronics">
           Electronics
+        </Link>
+        <Link className="li" to="/carrito">
+          <div className="carrito">
+            <AddShoppingCartIcon /> <span>S/ 0.00</span>
+          </div>
         </Link>
       </ul>
     </nav>
